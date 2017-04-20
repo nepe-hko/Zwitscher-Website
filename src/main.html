@@ -4,24 +4,35 @@
     <meta charset="utf-8" />
     <title>Zwitascher</title>
     <style>
+
         nav {
-            background-color: darkgreen;
+            background-color: darkgrey;
             padding: 10px;
             margin: 7px;
-            
+            border-radius: 10px;
 
-
+        }
+        textarea {
+            width: 300px;
+            height: 100px;
         }
     </style>
 </head>
 <body>
     <nav>
-        <button>Home</button>
+        <a href="./main.html">
+            <img src="media/bird.png" width="50" height="50" />
+        </a>
         <label>Username</label>
-        <img src="media/bird.png" />
         <button>Logout</button>    
     </nav>
+
+
     <main>
+        <div class="input">
+            <textarea type="text" placeholder="Wie fühlst du dich heute? ..."></textarea>
+            <button>Zwitscher</button>
+        </div>
         <div class="tweet">
             <span class="tweet-header">
                 <img src="media/user.png" height="50" width="50"/>
