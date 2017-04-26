@@ -10,8 +10,10 @@ nav {
     border-radius: 10px;
 }
 
-nav a {
+nav a, nav label {
     display: inline;
+    margin-bottom: auto;
+    margin-top: auto;
     float: left;
     border-right: 1px solid #bbb;
     display: block;
@@ -20,11 +22,18 @@ nav a {
     padding: 14px 16px;
     text-decoration: none;
     background-color: darkgrey;
+    float: left;
 }
+
 
 nav a:hover {
     background-color: white;
     color: black;
+}
+
+nav img {
+    width: 15px;
+    height: 15px;
 }
 
 input {
@@ -45,3 +54,4 @@ body {
 label {
     margin: .5em;
 }
+
