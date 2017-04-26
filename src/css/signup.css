@@ -1,0 +1,119 @@
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-width : 1px) {
+    main {
+        display: grid;
+        grid-template-columns: 0% 100% 0%;
+    }
+
+    .signup form {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    #lbl_username {
+        grid-row: 1;
+    }
+
+    #in_username {
+        grid-row: 2;
+    }
+
+    #lbl_password {
+        grid-row: 3;
+    }
+
+    #in_password {
+        grid-row: 4;
+    }
+
+    #lbl_passwordRepeat {
+        grid-row: 5;
+    }
+
+    #in_passwordRepeat {
+        grid-row: 6;
+    }
+
+    #btn_submit {
+        grid-row: 7;
+    }
+
+    #p_agb {
+        grid-row: 8;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    main {
+        display: grid;
+        grid-template-columns: 10% 80% 10%;
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+    }
+
+    .signup form {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    #lbl_username {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #in_username {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #lbl_password {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #in_password {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #lbl_passwordRepeat {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #in_passwordRepeat {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    #btn_submit {
+        grid-column: 1 / span 2;
+        grid-row: 4;
+    }
+
+    #p_agb {
+        grid-column: 1 / span 2;
+        grid-row: 5;
+    }
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    main {
+        display: grid;
+        grid-template-columns: 35% 30% 35%;
+    }
+
+}
+
+.signup {
+    grid-column: 2;
+}

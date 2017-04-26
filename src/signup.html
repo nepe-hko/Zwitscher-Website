@@ -1,27 +1,38 @@
 ﻿<!DOCTYPE HTML>
 <html>
-<HEAD>
+<head>
     <meta charset="utf-8">
-    <title> Anmelden für Zwitscher </title>
-</HEAD>
-<BODY>
-    <header>
-        <h1>
-            Willkommen auf Zwitscher! Wir sind glücklich, dass DU da bist!!
-        </h1>
-    </header>
-    <label for="fname">
-        Firstname
-        <input type="text" id="firstname"></input>
-    </label><br>
+    <title> Zwitscher | Registrieren </title>
+    <link rel="stylesheet" href="css/king.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+</head>
+<body>
+    <main>
+        <section class="signup">
+            <h1>
+                Willkommen auf Zwitscher! Wir sind glücklich, dass DU da bist!!
+            </h1>
 
-    <label for="sname">
-        Surname
-        <input type="text" id="surname"></input>
-    </label>
+            <form action="./main.html" target="_self">
+                <label id="lbl_username">Benutzername</label>
+                <input type="text" id="in_username" />
 
-    <footer id=>
-        Durch deine Anmeldung auf Zwitscher geht deine Seele in den Besitz des Teufels über. Eine Zustimmung zu unseren <a href="agb.html">AGBs</a> ist dadurch nicht mehr erforderlich.
-    </footer>
-</BODY>
+                <label id="lbl_password">Password</label>
+                <input type="password" id="in_password" />
+                
+                <label id="lbl_passwordRepeat">Passwort wiederholen</label>
+                <input id="in_passwordRepeat" type="password"/>
+
+                <input id="btn_submit" type="submit" value="Registrieren" />
+                
+                <p id="p_agb">
+                    Durch deine Anmeldung auf Zwitscher geht deine Seele in den Besitz des Teufels über. Eine Zustimmung zu unseren <a href="404.html">AGBs</a> ist dadurch nicht mehr erforderlich.
+                </p>
+            </form>
+
+        </section>
+    </main>
+
+       
+</body>
 </html>

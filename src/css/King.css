@@ -30,3 +30,18 @@ nav a:hover {
 input {
     margin: .5em;
 }
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    color: black;
+    background-color: white;
+}
+
+label {
+    margin: .5em;
+}
