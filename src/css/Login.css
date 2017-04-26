@@ -1,3 +1,158 @@
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    main {
+        display: grid;
+        grid-template-columns: 0% 100% 0%;
+    }
+
+    .loginForm form {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    #lbl_username {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    #lbl_password {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    #in_username {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    #in_password {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    #btn_submit {
+        grid-row: 5;
+        grid-column: 1;
+    }
+
+    #a_forgotPassword {
+        grid-row: 6;
+        grid-column: 1;
+    }
+
+    #p_register {
+        grid-row: 7;
+        grid-column: 1;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    main {
+        display: grid;
+        grid-template-columns: 10% 80% 10%;
+    }
+
+    .loginForm form {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    #lbl_username {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    #in_username {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    #lbl_password {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    #in_password {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    #btn_submit {
+        grid-row: 5;
+        grid-column: 1;
+    }
+
+    #a_forgotPassword {
+        grid-row: 6;
+        grid-column: 1;
+    }
+
+    #p_register {
+        grid-row: 7;
+        grid-column: 1;
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+    }
+
+    .loginForm form {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    #lbl_username {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #lbl_password {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #in_username {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #in_password {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #btn_submit {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #a_forgotPassword {
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    #p_register {
+        grid-row: 4;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+    main {
+        display: grid;
+        grid-template-columns: 35% 30% 35%;
+    }
+}
+
+
+
 h1 {
     color: red;
     text-align: center;
@@ -10,10 +165,7 @@ body {
     background-color: white;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 35% 30% 35%;
-}
+
 
 .loginForm {
     grid-column: 2;
@@ -27,43 +179,5 @@ main {
     margin-right: auto;
 }
 
-.loginForm form {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
 
-#lbl_username {
-    grid-column: 1;
-    grid-row: 1;
-}
 
-#lbl_password {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-#in_username {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-#in_password {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-#btn_submit {
-    grid-column: 1;
-    grid-row: 3;
-}
-
-#a_forgotPassword {
-    grid-row: 3;
-    grid-column: 2;
-}
-
-#p_register {
-    grid-row: 4;
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
