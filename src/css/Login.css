@@ -5,7 +5,7 @@
         grid-template-columns: 0% 100% 0%;
     }
 
-    .loginForm form {
+    .login form {
         display: grid;
         grid-template-columns: 100%;
     }
@@ -61,7 +61,7 @@
         grid-template-columns: 20% 60% 20%;
     }
 
-    .loginForm form {
+    .login form {
         display: grid;
         grid-template-columns: 50% 50%;
     }
@@ -111,7 +111,7 @@
 }
 
 
-.loginForm {
+.login {
     grid-column: 2;
     grid-row: 1;
     text-align: center;
