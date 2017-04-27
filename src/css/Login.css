@@ -15,12 +15,14 @@
         grid-column: 1;
     }
 
-    #lbl_password {
+
+    #in_username {
         grid-row: 2;
         grid-column: 1;
     }
 
-    #in_username {
+
+    #lbl_password {
         grid-row: 3;
         grid-column: 1;
     }
