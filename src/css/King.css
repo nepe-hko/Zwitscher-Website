@@ -1,8 +1,12 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
 nav {
     display: block;
     padding: 8px;
-    background-color: #dddddd;
-    background-color: darkgrey;
+    background-color: darkgray;
     list-style-type: none;
     overflow: hidden;
     padding: 10px;
@@ -15,7 +19,8 @@ nav a, nav label {
     margin-bottom: auto;
     margin-top: auto;
     float: left;
-    border-right: 1px solid #bbb;
+    
+    border-radius: 10px;
     display: block;
     color: black;
     text-align: center;
@@ -46,9 +51,9 @@ h1 {
 }
 
 body {
-    font-family: "Times New Roman", Times, serif;
+
     color: black;
-    background-color: white;
+    
 }
 
 label {
