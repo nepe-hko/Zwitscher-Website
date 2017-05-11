@@ -43,8 +43,28 @@
  catch(PDOException $e) {
      echo "Error: " . $e->getMessage();
  }
- $conn = null;
  echo "</table>";
+
+ echo "<table style='border: solid 1px black;'>";
+ echo "<tr><th>TweetId</th><th>Date</th><th>UserId</th><th>Content</th></tr>";
+
+ try {
+     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     $stmt = $conn->prepare("SELECT TweetId,Date,UserId,Content FROM Tweets");
+     $stmt->execute();
+
+     // set the resulting array to associative
+     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+     foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+         echo $v;
+     }
+ }
+ catch(PDOException $e) {
+     echo "Error: " . $e->getMessage();
+ }
+ echo "</table>";
+
  ?>
 
 </body>
