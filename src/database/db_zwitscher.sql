@@ -1,3 +1,6 @@
+drop database if exists `db_zwitscher`;
+create database `db_zwitscher`;
+
 USE db_zwitscher;
 
 CREATE TABLE Users(
