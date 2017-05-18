@@ -6,6 +6,8 @@
     <title>Zwitscher</title>
     <link rel="stylesheet" href="css/king.css"/>
     <link rel="stylesheet" href="css/main.css"/>
+    <script src="./validation.js" ></script>
+
 </head>
 <body>
     <nav>
@@ -21,8 +23,8 @@
     <main>
         <div class="input">
           <form action="postTweet.php" method="post">
-            <input type="text" name="tweet" placeholder="Wie fühlst du dich heute? ..."></input>
-            <button type="sumbit">Zwitscher</button>
+            <input type="text" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);" />
+            <button disabled="true" id="btn_tweet" type="sumbit">Zwitscher</button>
           </form>
         </div>
         <section class="timeline">
@@ -30,7 +32,7 @@
             require './database/database.php';
             require './tweets.php';
             $conn = createDatabaseConnection();
-            $stmt = $conn->query("SELECT usr.Username,  tw.Date,  tw.Content FROM tweets tw JOIN users usr ON tw.UserId = usr.UserId;");
+            $stmt = $conn->query("SELECT usr.Username,  tw.Date,  tw.Content FROM tweets tw JOIN users usr ON tw.UserId = usr.UserId ORDER BY tw.Date;");
 
                 // set the resulting array to associative
                 foreach ($stmt as $row) {
