@@ -69,7 +69,7 @@ input {
 
 .tweet-header {
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 10% 70% 20%;
     border-bottom: 2px solid black;
 }
 
@@ -81,8 +81,12 @@ input {
 
     }
 
-    .tweet-header p {
+    .tweet-username {
         grid-column: 2;
+    }
+
+    .tweet-date{
+      grid-column: 3;
     }
 
 .tweet-content {

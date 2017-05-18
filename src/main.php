@@ -28,22 +28,13 @@
         <section class="timeline">
             <?php
             require './database/database.php';
+            require './tweets.php';
             $conn = createDatabaseConnection();
             $stmt = $conn->query("SELECT usr.Username,  tw.Date,  tw.Content FROM tweets tw JOIN users usr ON tw.UserId = usr.UserId;");
 
                 // set the resulting array to associative
                 foreach ($stmt as $row) {
-                  echo "<article class='tweet'>";
-                  echo "<div class='tweet-header'>";
-                  echo "<img src='media/user.png' />";
-
-                  echo ("<p>{$row["Username"]}</p>");
-                  echo ("<p>{$row["Date"]}</p>");
-
-                  echo "</div> <div class='tweet-content'>";
-                  echo ("<p>{$row["Content"]}</p>");
-                  echo "</div>";
-                  echo "</article>";
+                  outputTweet($row["Username"],$row["Date"],$row["Content"]);
                 }
 
              ?>
