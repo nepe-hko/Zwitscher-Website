@@ -20,8 +20,10 @@
 
     <main>
         <div class="input">
-            <textarea type="text" placeholder="Wie fühlst du dich heute? ..."></textarea>
-            <button>Zwitscher</button>
+          <form action="postTweet.php" method="post">
+            <input type="text" name="tweet" placeholder="Wie fühlst du dich heute? ..."></input>
+            <button type="sumbit">Zwitscher</button>
+          </form>
         </div>
         <section class="timeline">
             <?php
@@ -34,16 +36,12 @@
                   echo "<article class='tweet'>";
                   echo "<div class='tweet-header'>";
                   echo "<img src='media/user.png' />";
-                  echo ('<p>');
 
-                  echo ($row["Username"]);
-                  echo "</p>";
+                  echo ("<p>{$row["Username"]}</p>");
+                  echo ("<p>{$row["Date"]}</p>");
 
-                  echo "</div>";
-                  echo "<div class='tweet-content'>";
-                  echo ('<p>');
-                  echo ($row["Content"]);
-                  echo "</p>";
+                  echo "</div> <div class='tweet-content'>";
+                  echo ("<p>{$row["Content"]}</p>");
                   echo "</div>";
                   echo "</article>";
                 }
