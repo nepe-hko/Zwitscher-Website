@@ -32,7 +32,7 @@
             require './database/database.php';
             require './tweets.php';
             $conn = createDatabaseConnection();
-            $stmt = $conn->query("SELECT usr.Username,  tw.Date,  tw.Content FROM tweets tw JOIN users usr ON tw.UserId = usr.UserId ORDER BY tw.Date;");
+            $stmt = $conn->query("SELECT usr.Username,  tw.Date,  tw.Content FROM tweets tw JOIN users usr ON tw.UserId = usr.UserId ORDER BY tw.Date DESC;");
 
                 // set the resulting array to associative
                 foreach ($stmt as $row) {

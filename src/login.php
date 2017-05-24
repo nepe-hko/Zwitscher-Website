@@ -20,7 +20,6 @@
     <main>
         <section class="login">
             <h1>Willkommen auf Zwitscher!</h1>
-
             <a href="./login.html" >
                 <img src="media/bird.png" width="100" height="100" />
             </a>
@@ -36,7 +35,7 @@
 
                 <a href="404.html" id="a_forgotPassword">Passwort vergessen?</a>
                 <p id="p_register">
-                    Kein Konto? <a href="signup.html">Registrieren</a>
+                    Kein Konto? <a href="signup.php">Registrieren</a>
                     Sie sich noch heute!
                 </p>
             </form>

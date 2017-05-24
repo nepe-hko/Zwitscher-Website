@@ -14,17 +14,19 @@
                 Willkommen auf Zwitscher! Wir sind glücklich, dass DU da bist!!
             </h1>
 
-            <form action="./main.html" target="_self">
-                <label id="lbl_username">Benutzername</label>
-                <input type="text" id="in_username" />
+            <form action="database/createUser.php" method="post">
+                <label>Benutzername</label>
+                <input type="text" name="un"/>
 
-                <label id="lbl_password">Password</label>
-                <input type="password" id="in_password" />
+                <label>Password</label>
+                <input type="password" name="pw"/>
                 
-                <label id="lbl_passwordRepeat">Passwort wiederholen</label>
-                <input id="in_passwordRepeat" type="password"/>
+                <label>Passwort wiederholen</label>
+                <input type="password"/>
 
-                <input id="btn_submit" type="submit" value="Registrieren" />
+                <button type="submit">
+                    Registrieren
+                </button>
                 
                 <p id="p_agb">
                     Durch deine Anmeldung auf Zwitscher geht deine Seele in den Besitz des Teufels über. Eine Zustimmung zu unseren <a href="404.html">AGBs</a> ist dadurch nicht mehr erforderlich.
