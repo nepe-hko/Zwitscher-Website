@@ -9,18 +9,18 @@
 </head>
 <body>
     <nav>
-        <a href="./login.html">
+        <a href="./login.php">
             <img src="media/bird.png" />
         </a>
-        <a href="login.html">FEEDBACK</a>
-        <a href="login.html">IMPRESSUM</a>
-        <a href="login.html">AGB</a>
+        <a href="login.php">FEEDBACK</a>
+        <a href="login.php">IMPRESSUM</a>
+        <a href="login.php">AGB</a>
     </nav>
 
     <main>
         <section class="login">
             <h1>Willkommen auf Zwitscher!</h1>
-            <a href="./login.html" >
+            <a href="./login.php" >
                 <img src="media/bird.png" width="100" height="100" />
             </a>
 
@@ -41,6 +41,7 @@
             </form>
 
             <?php
+			
             require './database/database.php';
 			$conn = createDatabaseConnection();
 
@@ -55,7 +56,7 @@
 					 $user = $statement->fetch();
  
 					 //Überprüfung des Passworts
-					 if ($user !== false && password_verify($passwort, $user['passwort'])) {
+					 if ($user !== false && password_verify($password, $user['password'])) {
 						 $_SESSION['userid'] = $user['id'];
 							die('Login erfolgreich. Weiter zur <a href="main.php">Hauptseite</a>');
 							} else {
