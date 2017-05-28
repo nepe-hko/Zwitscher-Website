@@ -40,6 +40,33 @@
                 </p>
             </form>
 
+            <?php
+            require './database/database.php';
+			$conn = createDatabaseConnection();
+
+					session_start();
+ 
+					if(isset($_GET['login'])) {
+					 $username = $_POST['username'];
+					 $password = $_POST['password'];
+ 
+					 $statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+					 $result = $statement->execute(array('username' => $username));
+					 $user = $statement->fetch();
+ 
+					 //Überprüfung des Passworts
+					 if ($user !== false && password_verify($passwort, $user['passwort'])) {
+						 $_SESSION['userid'] = $user['id'];
+							die('Login erfolgreich. Weiter zur <a href="main.php">Hauptseite</a>');
+							} else {
+							$errorMessage = "Benutzername oder Passwort war ungültig";
+					 }
+						if(isset($errorMessage)) {
+						 echo $errorMessage;
+						}
+					}
+					?>
+
         </section>
     </main>
 
