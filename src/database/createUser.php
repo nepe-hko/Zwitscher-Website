@@ -33,7 +33,7 @@ if ($passwortHashRegister != $passwortHashRegister2) {
 
 
 // Insert Into Database
-if ($available && ($passwortHashRegister === $passwortHashRegister2)) {
+if ($available && ($passwortHashRegister == $passwortHashRegister2)) {
     $sql = "INSERT INTO users (Username, Password) VALUES ('$usernameRegister', '$passwortHashRegister')";
     $conn->query($sql);  
     echo "User erfolgreich angelegt <br>";
