@@ -4,6 +4,7 @@ require 'database.php';
 // Read Variables
 $usernameRegister = "{$_POST["un"]}";
 $passwortHashRegister = md5("{$_POST["pw"]}");
+$passwortHashRegister2 = md5("{$_POST["pw2"]}");
 
 // Connect to Database
 $conn = createDatabaseConnection();
@@ -20,35 +21,23 @@ else {
     $available = true;
 }
 
+if(!$available)
+{
+    header('Location: ../signup.php?msg=user');
+}
+
+// Check, if Passwords are the same
+if ($passwortHashRegister != $passwortHashRegister2) {
+    header('Location: ../signup.php?msg=password');
+}
+
+
 // Insert Into Database
-if ($available) {
+if ($available && ($passwortHashRegister === $passwortHashRegister2)) {
     $sql = "INSERT INTO users (Username, Password) VALUES ('$usernameRegister', '$passwortHashRegister')";
     $conn->query($sql);  
     echo "User erfolgreich angelegt <br>";
     echo "Du wirst weitergeleitet...";
-    header('Refresh: 3 ; ../main.php');
+    header('Location: ../main.php');
 }
-else {
-    echo "Der Username ist schon vergeben! <br>";
-    echo "Du wirst weitergeleitet...";
-    header('Refresh: 3 ; ../signup.php');
-}
-
-
-/*
-
-
- 
- <!DOCTYPE HTML>
- <html>
- <head>
-     <meta http-equiv="refresh" content="0; url=../main.php">
-     <link rel="icon" href="./media/favicon.ico" type="image/vnd.microsoft.icon">
- </head>
-     <body>
-     </body>
- </html>
- */
-
-
  ?>

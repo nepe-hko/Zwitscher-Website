@@ -14,6 +14,29 @@
                 Willkommen auf Zwitscher! Wir sind glücklich, dass DU da bist!!
             </h1>
 
+            <?php
+                if(isset($_REQUEST['msg']))
+                {
+                    $action = $_REQUEST['msg'];
+                    if($action == "password")
+                    {
+                        ?>
+                        <div class="alert">
+                            Die Passwörter stimmen nicht überein.
+                	    </div>
+                        <?php
+                    }
+                    else if($action == "user")
+                    {
+                        ?>
+                        <div class="alert">
+                            Der Benutzername ist bereits vergeben.
+                	    </div>
+                        <?php
+                    }
+                }
+            ?>
+
             <form action="database/createUser.php" method="post">
                 <label>Benutzername</label>
                 <input type="text" name="un"/>
@@ -22,7 +45,7 @@
                 <input type="password" name="pw"/>
                 
                 <label>Passwort wiederholen</label>
-                <input type="password"/>
+                <input type="password" name="pw2"/>
 
                 <button type="submit">
                     Registrieren
