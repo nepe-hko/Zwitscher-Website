@@ -24,10 +24,13 @@ else {
 if ($available) {
     $sql = "INSERT INTO users (Username, Password) VALUES ('$usernameRegister', '$passwortHashRegister')";
     $conn->query($sql);  
-    echo "User erfolgreich angelegt";
+    echo "User erfolgreich angelegt <br>";
+    echo "Du wirst weitergeleitet...";
+    header('Refresh: 3 ; ../main.php');
 }
 else {
-    echo "Der Username ist schon vergeben!";
+    echo "Der Username ist schon vergeben! <br>";
+    echo "Du wirst weitergeleitet...";
     header('Refresh: 3 ; ../signup.php');
 }
 
