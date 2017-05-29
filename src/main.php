@@ -1,4 +1,22 @@
-﻿<!doctype html>
+﻿<?php
+    include "session.php";
+    
+    if(isset($_REQUEST['action']))
+    {
+        $action = $_REQUEST['action'];
+        if($action == "logout")
+        {
+            $conn = createDatabaseConnection();
+            $sessionId = $_COOKIE["session"];
+            $sql = "DELETE FROM sessions WHERE SessionId = '$sessionId'";
+            $conn->query($sql);
+            setcookie("session", "", time() -3600);
+            header('Location:index.php');
+        }
+    }
+    
+?>
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -14,7 +32,7 @@
         <a href="./main.html">
             <img src="media/bird.png" width="50" height="50" />
         </a>
-        <a href="./login.html" id="a_logout">Logout</a>
+        <a href="./main.php?action=logout" id="a_logout">Logout</a>
 
         <label id="lbl_loggedInUser">Hallo: Username</label>
     </nav>
@@ -29,11 +47,11 @@
         </div>
         <section class="timeline">
             <?php
-            require './database/database.php';
+            //require './database/database.php';
             require './tweets.php';
             $conn = createDatabaseConnection();
             $stmt = $conn->query("SELECT usr.Username,  tw.Date,  tw.Content FROM tweets tw JOIN users usr ON tw.UserId = usr.UserId ORDER BY tw.Date DESC;");
-
+            
                 // set the resulting array to associative
                 foreach ($stmt as $row) {
                   outputTweet($row["Username"],$row["Date"],$row["Content"]);

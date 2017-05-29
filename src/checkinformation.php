@@ -30,13 +30,23 @@ else {
 
 // Check Password
 if ($exist) {
-  $sql = "SELECT Password From users WHERE Username = '$username'";
+  $sql = "SELECT * From users WHERE Username = '$username'";
   $passwordInDatabase = $conn->query($sql);
   $passwordInDatabase = $passwordInDatabase->fetch();
 
   if ($passwordInDatabase['Password'] == $password) {
     // Login Successful
     echo "Erfolgreich eingeloggt! <br>";
+    $userId = $passwordInDatabase['UserId'];
+    $sql = "INSERT INTO sessions (UserId) VALUES ($userId)";
+    $conn->query($sql);
+    $sql = "SELECT SessionId FROM sessions WHERE UserId = $userId";
+    $row = $conn->query($sql)->fetch();
+
+    // login
+    //require 'session.php';
+    setcookie("session", $row['SessionId']);
+
     echo "Du wirst weitergeleitet...";
     header('Refresh: 3 ; main.php');
   } else {

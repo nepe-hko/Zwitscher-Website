@@ -1,6 +1,7 @@
 <?php
 function createDatabaseConnection()
 {
+
   $servername = "localhost";
   $username = "zwitscher";
   $password = "zwitscher";
