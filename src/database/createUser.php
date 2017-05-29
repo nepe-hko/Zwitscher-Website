@@ -27,9 +27,8 @@ if ($available) {
     echo "User erfolgreich angelegt";
 }
 else {
-    echo "Username ist schon vergeben";
-
-    header("../sighnup.php");
+    echo "Der Username ist schon vergeben!";
+    header('Refresh: 3 ; ../signup.php');
 }
 
 
