@@ -17,7 +17,6 @@ $usernamecheck = $conn->query($sql);
 if ($usernamecheck->fetch()) {
     $available = false;
     header('Location: ../signup.php?msg=user');
-    
 }
 else {
     $available = true;
