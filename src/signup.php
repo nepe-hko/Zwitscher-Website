@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="css/signup.css" />
     </head>
     <body>
+        <?php
+        include("navbar.php");
+        ?>
         <main>
             <section class="signup">
                 <h1>
