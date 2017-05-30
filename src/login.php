@@ -31,6 +31,14 @@
                 	    </div>
                         <?php
                     }
+                    if($action == "wrong"){
+                        ?>
+                        <div class="alert">
+                        Bitte überprüfe Benutzername und Passwort.
+                        </div>
+                        <?php
+                    }
+                    
                 }
             ?>
             <br>

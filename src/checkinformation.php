@@ -4,7 +4,6 @@
 </head>
 <body>
 <?php
-
 require './database/database.php';
 $conn = createDatabaseConnection();
 
@@ -22,9 +21,7 @@ if ($row = $usernamecheck->fetch()) {
 }
 else {
     $exist = false;
-    echo "User existiert nicht! <br>";
-    echo "Du wirst weitergeleitet...!";
-    header('Refresh: 3 ; login.php');
+    header('Location: login.php?msg=wrong');
 
 }
 
@@ -47,9 +44,7 @@ if ($exist) {
     header("Location: main.php");
   } else {
     // Wrong Password
-    echo "Du hast ein falsches Passwort eingegeben! <br>";
-    echo "Du wirst weitergeleitet...";
-    header('Refresh: 3 ; login.php');
+    header('Location: login.php?msg=wrong');
   }
   
 }
