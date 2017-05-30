@@ -83,6 +83,7 @@ input {
 
     .tweet-username {
         grid-column: 2;
+        font-weight: bold;
     }
 
     .tweet-date{

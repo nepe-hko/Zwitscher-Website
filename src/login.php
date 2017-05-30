@@ -39,10 +39,6 @@
                     Sie sich noch heute!
                 </p>
             </form>
-			<?php
-			require './database/database.php';
-			$conn = createDatabaseConnection();
-			?>
 
         </section>
     </main>

@@ -43,12 +43,8 @@ if ($exist) {
     $sql = "SELECT SessionId FROM sessions WHERE UserId = $userId";
     $row = $conn->query($sql)->fetch();
 
-    // login
-    //require 'session.php';
     setcookie("session", $row['SessionId']);
-
-    echo "Du wirst weitergeleitet...";
-    header('Refresh: 3 ; main.php');
+    header("Location: main.php");
   } else {
     // Wrong Password
     echo "Du hast ein falsches Passwort eingegeben! <br>";

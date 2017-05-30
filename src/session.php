@@ -9,6 +9,7 @@ if(isset($_COOKIE["session"]))
     $conn = false;
     if(!$row)
     {
+        unset($_COOKIE['session']);
         setcookie("session", "", time() -3600);
         
         header('Location:index.php');

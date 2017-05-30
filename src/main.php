@@ -11,10 +11,9 @@
             $sql = "DELETE FROM sessions WHERE SessionId = '$sessionId'";
             $conn->query($sql);
             setcookie("session", "", time() -3600);
-            header('Location:index.php');
+            header('Location: index.php');
         }
-    }
-    
+    }   
 ?>
 <!doctype html>
 <html>
@@ -29,12 +28,23 @@
 </head>
 <body>
     <nav>
-        <a href="./main.html">
+        <a href="./main.php">
             <img src="media/bird.png" width="50" height="50" />
         </a>
         <a href="./main.php?action=logout" id="a_logout">Logout</a>
 
-        <label id="lbl_loggedInUser">Hallo: Username</label>
+        <label id="lbl_loggedInUser">
+            <?php
+                $conn = createDatabaseConnection();
+                $sql = "SELECT Username From users
+                        WHERE UserID = (SELECT UserId FROM sessions WHERE SessionId = '$sessionId')";
+                $username = $conn->query($sql)->fetch();
+                echo "<b>";
+                echo $username['Username'];
+                echo "</b>";
+
+            ?>
+        </label>
     </nav>
 
 
@@ -47,7 +57,6 @@
         </div>
         <section class="timeline">
             <?php
-            //require './database/database.php';
             require './tweets.php';
             $conn = createDatabaseConnection();
             $stmt = $conn->query("SELECT usr.Username,  tw.Date,  tw.Content FROM tweets tw JOIN users usr ON tw.UserId = usr.UserId ORDER BY tw.Date DESC;");
