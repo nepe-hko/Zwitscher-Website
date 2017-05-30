@@ -1,19 +1,18 @@
 <?php
 require 'database.php';
 
-// Read Variables
+// read variables
 $usernameRegister = "{$_POST["un"]}";
 $passwordHashRegister = md5("{$_POST["pw"]}");
 $passwordHashRegister2 = md5("{$_POST["pw2"]}");
 
-// Connect to Database
+// connect to database
 $conn = createDatabaseConnection();
 
-// Check Username availability 
+// check username availability 
 $available = false;
 $sql = "SELECT Username FROM users WHERE Username = '$usernameRegister'";
 $usernamecheck = $conn->query($sql);
-
 if ($usernamecheck->fetch()) {
     $available = false;
     header('Location: ../signup.php?msg=user');
@@ -23,12 +22,12 @@ else {
     $available = true;
 }
 
-// Check, if Passwords are the same
+// check, if passwords are the same
 if ($passwordHashRegister != $passwordHashRegister2) {
     header('Location: ../signup.php?msg=password');
 }
 
-// Insert Into Database
+// insert into database
 if ($available && ($passwordHashRegister == $passwordHashRegister2)) {
     $sql = "INSERT INTO users (Username, Password) VALUES ('$usernameRegister', '$passwordHashRegister')";
     $conn->query($sql);  
@@ -36,4 +35,4 @@ if ($available && ($passwordHashRegister == $passwordHashRegister2)) {
     echo "Du wirst weitergeleitet...";
     header('Location: ../login.php?msg=ok');
 }
- ?>
+?>
