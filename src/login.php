@@ -19,6 +19,21 @@
 
     <main>
         <section class="login">
+            <?php
+                if(isset($_REQUEST['msg']))
+                {
+                    $action = $_REQUEST['msg'];
+                    if($action == "ok")
+                    {
+                        ?>
+                        <div class="alert">
+                            Registrierung Erfolgreich. Du kannst dich jetzt Einloggen.
+                	    </div>
+                        <?php
+                    }
+                }
+            ?>
+            <br>
             <h1>Willkommen auf Zwitscher!</h1>
             <a href="./login.php" >
                 <img src="media/bird.png" width="100" height="100" />

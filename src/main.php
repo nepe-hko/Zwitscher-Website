@@ -51,7 +51,7 @@
     <main>
         <div class="input">
           <form action="postTweet.php" method="post">
-            <input type="text" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);" />
+            <input rows="2" cols="30" type="text" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);" />
             <button disabled="true" id="btn_tweet" type="sumbit">Zwitscher</button>
           </form>
         </div>

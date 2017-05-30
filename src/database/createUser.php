@@ -17,6 +17,7 @@ $usernamecheck = $conn->query($sql);
 if ($usernamecheck->fetch()) {
     $available = false;
     header('Location: ../signup.php?msg=user');
+    exit;
 }
 else {
     $available = true;
@@ -33,6 +34,6 @@ if ($available && ($passwordHashRegister == $passwordHashRegister2)) {
     $conn->query($sql);  
     echo "User erfolgreich angelegt <br>";
     echo "Du wirst weitergeleitet...";
-    header('Location: ../main.php');
+    header('Location: ../login.php?msg=ok');
 }
  ?>
