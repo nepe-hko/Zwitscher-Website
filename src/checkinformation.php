@@ -15,24 +15,23 @@
   $sql = "SELECT * FROM users WHERE Username = '$username'";
   $usernamecheck = $conn->query($sql);
 
-  if ($row = $usernamecheck->fetch()) {
+  $row = $usernamecheck->fetch();
     // check password
 
-    if ($row['Password'] == $password) {
-      // login successful
-      $userId = $row['UserId'];
-      $sql = "INSERT INTO sessions (UserId) VALUES ($userId)";
-      $conn->query($sql);
-      $sql = "SELECT SessionId FROM sessions WHERE UserId = $userId";
-      $row = $conn->query($sql)->fetch();
-        // set cookie and go to main
-      setcookie("session", $row['SessionId']);
-      header("Location: main.php");
+  if ($row['Password'] == $password) {
+    // login successful
+    $userId = $row['UserId'];
+    $sql = "INSERT INTO sessions (UserId) VALUES ($userId)";
+    $conn->query($sql);
+    $sql = "SELECT SessionId FROM sessions WHERE UserId = $userId";
+    $row = $conn->query($sql)->fetch();
+      // set cookie and go to main
+    setcookie("session", $row['SessionId']);
+    header("Location: main.php");
   }
   else {
       $exist = false;
       header('Location: login.php?msg=wrong');
-  }
   }
   ?>
   </body>
