@@ -38,6 +38,4 @@ function validateSignup()
 
   document.getElementById("btn_signup").disabled = !enabled;
 
-  console.log(enabled);
-
 }
