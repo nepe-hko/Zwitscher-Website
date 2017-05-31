@@ -6,6 +6,7 @@
         <title> Zwitscher | Registrieren </title>
         <link rel="stylesheet" href="css/king.css" />
         <link rel="stylesheet" href="css/signup.css" />
+        <script src="./validation.js" ></script>
     </head>
     <body>
         <?php
@@ -38,23 +39,23 @@
                 ?>
                 <form action="database/createUser.php" method="post">
                     <label>Benutzername</label>
-                    <input type="text" name="un"/>
+                    <input type="text" name="un" id="in_username" onkeyup="validateSignup();"/>
 
                     <label>Password</label>
-                    <input type="password" name="pw"/>
-                    
-                    <label>Passwort wiederholen</label>
-                    <input type="password" name="pw2"/>
+                    <input type="password" name="pw" id="in_password" onkeyup="validateSignup();"/>
 
-                    <button type="submit">
+                    <label>Passwort wiederholen</label>
+                    <input type="password" name="pw2" id="in_passwordRepeat" onkeyup="validateSignup();"/>
+
+                    <button type="submit" id="btn_signup" disabled="true" >
                         Registrieren
                     </button>
-                    
+
                     <p id="p_agb">
                         Durch deine Anmeldung auf Zwitscher geht deine Seele in den Besitz des Teufels über. Eine Zustimmung zu unseren <a href="404.html">AGBs</a> ist dadurch nicht mehr erforderlich.
                     </p>
                 </form>
             </section>
-        </main>     
+        </main>
     </body>
 </html>
