@@ -12,7 +12,7 @@
             setcookie("session", "", time() -3600);
             header('Location: index.php');
         }
-    }   
+    }
 ?>
 <!doctype html>
 <html>
@@ -45,8 +45,8 @@
         </nav>
         <main>
             <div class="input">
-            <form action="postTweet.php" method="post">
-                <input rows="2" cols="30" type="text" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);" />
+            <form id="form_tweet" action="postTweet.php" method="post">
+                <textarea form="form_tweet" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);"></textarea>
                 <button disabled="true" id="btn_tweet" type="sumbit">Zwitscher</button>
             </form>
             </div>
@@ -56,7 +56,7 @@
                 require './tweets.php';
                 $conn = createDatabaseConnection();
                 $stmt = $conn->query("SELECT usr.Username,  tw.Date,  tw.Content FROM tweets tw JOIN users usr ON tw.UserId = usr.UserId ORDER BY tw.Date DESC;");
-                
+
                     // set the resulting array to associative
                     foreach ($stmt as $row) {
                     outputTweet($row["Username"],$row["Date"],$row["Content"]);
