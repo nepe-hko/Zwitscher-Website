@@ -14,11 +14,13 @@ $available = false;
 $sql = "SELECT Username FROM users WHERE Username = '$usernameRegister'";
 $usernamecheck = $conn->query($sql);
 if ($usernamecheck->fetch()) {
+    // username not available
     $available = false;
     header('Location: ../signup.php?msg=user');
     exit;
 }
 else {
+    // username available
     $available = true;
 }
 
