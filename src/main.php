@@ -25,7 +25,7 @@
         <script src="./javascript/validation.js" ></script>
         <script src="./javascript/main.js" ></script>
     </head>
-    <body>
+    <body onload="startPolling()" onunload="stopPolling()">
         <nav>
             <a href="./main.php">
                 <img src="media/bird.png" width="50" height="50" />
@@ -45,16 +45,14 @@
             </label>
         </nav>
         <main>
-          <button id="btn_testAjax" type="button" onclick="loadTweets()">Ajax</button>
-
             <div class="input">
             <form id="form_tweet" action="postTweet.php" method="post">
                 <textarea form="form_tweet" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);"></textarea>
                 <button disabled="true" id="btn_tweet" type="sumbit">Zwitscher</button>
             </form>
             </div>
-            <section class="timeline">
-                <?php
+            <section class="timeline" id="timeline">
+                <!-- <?php
                 // write tweets on page
                 require './tweets.php';
                 $conn = createDatabaseConnection();
@@ -65,7 +63,7 @@
                     outputTweet($row["Username"],$row["Date"],$row["Content"]);
                     }
 
-                ?>
+                ?> -->
             </section>
         </main>
     </body>

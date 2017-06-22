@@ -42,7 +42,7 @@ textarea {
     resize: none;
     margin-top: 10px;
     box-sizing: border-box;
-    
+
     }
 
 .input {
@@ -85,6 +85,8 @@ textarea {
     .tweet-username {
         grid-column: 2;
         font-weight: bold;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     .tweet-date{
