@@ -6,7 +6,7 @@
         <title> Zwitscher | Registrieren </title>
         <link rel="stylesheet" href="css/king.css" />
         <link rel="stylesheet" href="css/signup.css" />
-        <script src="./validation.js" ></script>
+        <script src="./javascript/validation.js" ></script>
     </head>
     <body>
         <?php

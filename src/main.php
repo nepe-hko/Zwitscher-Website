@@ -22,7 +22,8 @@
         <title>Zwitscher</title>
         <link rel="stylesheet" href="css/king.css"/>
         <link rel="stylesheet" href="css/main.css"/>
-        <script src="./validation.js" ></script>
+        <script src="./javascript/validation.js" ></script>
+        <script src="./javascript/main.js" ></script>
     </head>
     <body>
         <nav>
@@ -44,6 +45,8 @@
             </label>
         </nav>
         <main>
+          <button id="btn_testAjax" type="button" onclick="loadTweets()">Ajax</button>
+
             <div class="input">
             <form id="form_tweet" action="postTweet.php" method="post">
                 <textarea form="form_tweet" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);"></textarea>
