@@ -3,9 +3,14 @@ require './database/database.php';
 $conn = createDatabaseConnection();
 
 $sessionId = $_COOKIE["session"];
-$sql = "SELECT UserId FROM sessions WHERE SessionId = '$sessionId'";
-$userID = $conn->query($sql)->fetch();
+$sql = "SELECT UserId FROM sessions WHERE SessionId = ':session'";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(":session",$sessionId);
+$stmt->execute();
+$userID = $stmt->fetch();
 $userID = $userID['UserId'];
-$conn->query("INSERT INTO tweets(UserId,Date,Content) VALUES('$userID',now(),'{$_POST["tweet"]}');");
+$stmt = $conn->prepare("INSERT INTO tweets(UserId,Date,Content) VALUES('$userID',now(),':tweetText');");
+$stmt->bindParam(":tweetText",$_POST["tweet"]);
+$stmt->execute();
 header("Location: main.php");
  ?>
