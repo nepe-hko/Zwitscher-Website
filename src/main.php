@@ -46,9 +46,9 @@
         </nav>
         <main>
             <div class="input">
-            <form id="form_tweet" action="postTweet.php" method="post">
-                <textarea form="form_tweet" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);"></textarea>
-                <button disabled="true" id="btn_tweet" type="sumbit">Zwitscher</button>
+            <form id="form_tweet">
+                <textarea id="textarea" name="tweet" placeholder="Wie fühlst du dich heute? ..." onkeyup="validateTweet(this.value);"></textarea>
+                <button disabled="true" id="btn_tweet" type="button" onclick="window.organizer.post(document.getElementById("tweetArea").value);">Zwitscher</button>
             </form>
             </div>
             <section class="timeline" id="timeline">
