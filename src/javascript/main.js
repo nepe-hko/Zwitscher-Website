@@ -20,6 +20,14 @@ class TweetOrganizer{
   {
     this.NewestDate = new Date(2000,1,1,0,0,0);
     this.isLoading = false;
+    }
+
+
+  postTweet(text)
+  {
+      let xhttp = new XMLHttpRequest();
+      xhttp.open("POST", postTweet.php, true);
+      xhttp.send("tweet : " + text);
   }
 
   addTweet(tweet)
