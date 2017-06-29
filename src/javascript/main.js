@@ -28,8 +28,8 @@ class TweetOrganizer{
     document.getElementById('tweetArea').value = "";
       let xhttp = new XMLHttpRequest();
       xhttp.open("POST", "postTweet.php", true);
-      xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhttp.send("tweet=" + text);
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.send(JSON.stringify({tweet: text}));
   }
 
   addTweet(tweet)
