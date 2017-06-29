@@ -26,8 +26,9 @@ class TweetOrganizer{
   postTweet(text)
   {
       let xhttp = new XMLHttpRequest();
-      xhttp.open("POST", postTweet.php, true);
-      xhttp.send("tweet : " + text);
+      xhttp.open("POST", "postTweet.php", true);
+      xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhttp.send("tweet=" + text);
   }
 
   addTweet(tweet)

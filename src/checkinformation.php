@@ -12,15 +12,12 @@
   $password = md5($_POST["in_password"]);
 
   // check, if user exists
-  $sql = "SELECT * FROM users WHERE Username = ':username' OR 1=1";
-  $stmt = $conn->prepare($sql);
+  $stmt = $conn->prepare("SELECT * FROM users WHERE Username = :username");
   $stmt->bindParam(":username",$username);
 
    $stmt->execute();
    $row = $stmt->fetch();
     // check password
-
-
 
   if ($row['Password'] == $password) {
     // login successful

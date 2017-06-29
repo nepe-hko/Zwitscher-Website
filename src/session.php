@@ -4,8 +4,11 @@ if(isset($_COOKIE["session"]))
 {
     $conn = createDatabaseConnection();
     $sessionId = $_COOKIE["session"];
-    $sql = "SELECT * FROM sessions WHERE SessionId = '$sessionId'";
-    $row = $conn->query($sql)->fetch();
+    $sql = "SELECT * FROM sessions WHERE SessionId = :sessionId";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":sessionId",$sessionId);
+     $stmt->execute();
+     $row = $stmt->fetch();
     $conn = false;
     if(!$row)
     {
